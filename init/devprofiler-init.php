@@ -9,11 +9,11 @@ class DevProfiler_Init
 {
     public function __construct()
     {
-        $settings = new DevProfiler_Settings();
+        $settings = DevProfiler_Settings::get_instance();
         if (!$settings->is_ip_allowed()) {
             return;
         }
 
-        new DevProfiler_Profiler_Creator();
+        require_once plugin_dir_path(__FILE__) . "init/devprofiler-manager.php";
     }
 }
