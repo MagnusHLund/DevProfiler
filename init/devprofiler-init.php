@@ -14,6 +14,10 @@ class DevProfiler_Init
             return;
         }
 
+        if (!$settings->should_run_on_wp_cron() && defined('DOING_CRON') && DOING_CRON) {
+            return;
+        }
+
         require_once plugin_dir_path(__FILE__) . "init/devprofiler-manager.php";
     }
 }

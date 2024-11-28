@@ -12,6 +12,7 @@ class DevProfiler_Settings
 
     private $allowed_ips = [];
     private $use_automatic_hook_listener = true;
+    private $run_on_wp_cron;
 
     private static $instance = null;
 
@@ -42,5 +43,10 @@ class DevProfiler_Settings
     public function should_use_automatic_hook_listener()
     {
         return $this->use_automatic_hook_listener;
+    }
+
+    public function should_run_on_wp_cron()
+    {
+        return $this->run_on_wp_cron;
     }
 }
