@@ -12,7 +12,9 @@ class DevProfiler_Settings
 
     private $allowed_ips = [];
     private $use_automatic_hook_listener = true;
-    private $run_on_wp_cron;
+    private $run_on_wp_cron = false;
+    private $run_on_ajax = false;
+    private $max_parameter_length = 200;
 
     private static $instance = null;
 
@@ -48,5 +50,15 @@ class DevProfiler_Settings
     public function should_run_on_wp_cron()
     {
         return $this->run_on_wp_cron;
+    }
+
+    public function should_run_on_ajax()
+    {
+        return $this->run_on_ajax;
+    }
+
+    public function get_max_parameter_length()
+    {
+        return $this->max_parameter_length;
     }
 }

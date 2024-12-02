@@ -56,7 +56,7 @@ abstract class DevProfiler_Abstract_Profiler
             $parameter = "Not convertable value, originally $variableType.";
         }
 
-        if (strlen($parameter) > 200) {
+        if (strlen($parameter) > DevProfiler_Settings::get_instance()->get_max_parameter_length()) {
             $parameter = "Parameter is too long to be output.";
         }
 
