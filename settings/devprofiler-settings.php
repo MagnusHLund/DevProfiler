@@ -61,4 +61,14 @@ class DevProfiler_Settings
     {
         return $this->max_parameter_length;
     }
+
+    public function set_allowed_ip_addresses() {}
+
+    public function set_use_automatic_hook_listener() {}
+
+    public function set_run_on_wp_cron() {}
+
+    public function set_run_on_ajax() {}
+
+    public function set_max_parameter_length($max_length) {}
 }
